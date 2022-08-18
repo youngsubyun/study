@@ -1,0 +1,45 @@
+div, input, textarea {
+    box-sizing: border-box;
+}
+
+.form_background {
+    background-color: black;
+    padding: 30px;
+}
+
+.form_white {
+    background-color: white;
+    padding: 30px;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.w_100 {
+    width: 100%;
+    padding: 10px;
+}
+
+.form_input {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.w_50 {
+    width: 50%;
+    float: left;
+    padding: 10px;
+}
+
+.yellow_button {
+    text-align: center;
+    background-color: tomato;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 40px;
+    margin-left: 55%;
+}

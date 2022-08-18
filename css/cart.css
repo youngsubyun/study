@@ -1,0 +1,45 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    margin: auto;
+    padding: 20px;
+    max-width: 700px;
+}
+
+th {color: #69b6e3;}
+
+td,th {
+    /* border: 1px solid black; */
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.cart_background {
+    width: 100%;
+    background-color: #c2d3de;
+    padding: 30px;
+}
+
+.cart_table {
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.cart_table td, .cart_table th {
+    padding: 15px;
+    border-bottom: 1px solid #c2d3de;
+}
+
+.cell_long {
+    width: 700px;
+    text-align: left;
+}
