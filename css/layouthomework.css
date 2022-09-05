@@ -1,0 +1,22 @@
+.flexbox {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item {
+    min-height: 150px;
+    flex-basis: 25%;
+    text-align: center;
+}
+
+@media screen and (max-width : 1200px) {
+    .item {
+        flex-basis: 50%;
+    }
+}
+
+@media screen and (max-width : 567px) {
+    .item {
+        flex-basis: 100%;
+    }
+}

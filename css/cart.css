@@ -8,16 +8,19 @@ h3 {
     margin: auto;
     padding: 20px;
     max-width: 700px;
+    font-size: 20px;
+    color:cornflowerblue;
 }
 
 th {color: #69b6e3;}
 
-td,th {
-    /* border: 1px solid black; */
-}
+/* td,th { 
+    border: 1px solid black;
+}*/
 
 table {
     border-collapse: collapse;
+    font-size: 20px;
 }
 
 .cart_background {
@@ -42,4 +45,47 @@ table {
 .cell_long {
     width: 700px;
     text-align: left;
+}
+
+.btn {
+    padding: 15px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: coral;
+    color: white;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: chocolate;
+}
+
+.btn:focus {
+    background-color: gray;
+}
+
+.btn:active {
+    background-color: brown;
+    border: 2px solid black;
+}
+
+.input_test {
+    font-size: 20px;
+}
+
+.input_test:focus {
+    border: 3px solid red;
+}
+
+.custon_link {
+    text-decoration: none;
+}
+
+.custon_link:link {
+    color: violet;
+}
+
+.custon_link:visited {
+    color: black;
 }
