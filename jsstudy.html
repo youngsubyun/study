@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/jsstudy.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="alert-box" id="alert">
+        <p id="title">알림창임</p>
+        <button id="close">닫기</button>
+    </div>
+    <button onclick="idtxt()">버튼1</button>
+    <button onclick="pwdtxt()">버튼2</button>
+
+    <script>
+        
+        document.getElementById('close').addEventListener('click', function(){
+            document.getElementById('alert').style.display = 'none';
+        })
+
+        
+        function alert(hole){
+            document.getElementById('alert').style.display = hole;
+        }
+
+/*
+        document.getElementById('close').addEventListener('click', function(){
+            document.getElementById('alert').style.display = 'none';
+            //('click', [파라미터자리에 들어가는 함수 == 콜백함수/ 코드를 순차적 실행할 때 쓰임] <- function(){});
+        });
+        //event -> 클릭, 키입력, 스크롤, 드래그 등 유저들이 나의 웹페이지에 조작을 가하는 것
+
+        function alert(hole){
+            document.getElementById('alert').style.display = hole;
+        }
+*/
+
+        
+        function idtxt(){
+            document.getElementById('title').innerHTML = '아이디입력창';
+            document.getElementById('alert').style.display = 'block';
+        }
+
+        function pwdtxt(){
+            document.getElementById('title').innerHTML = '비번입력창';
+            document.getElementById('alert').style.display = 'block';
+        }
+
+
+        // function alertApen(){
+        //     document.getElementById('alert').style.display = 'block';
+        // }
+
+        // function alertClose(){
+        //     document.getElementById('alert').style.display = 'none';
+        // }
+    </script>
+</body>
+</html>
