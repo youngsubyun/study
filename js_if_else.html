@@ -36,16 +36,19 @@
       </div>
 
       <script>
-
+        
        $('form').on('submit', function(){
-        if (document.getElementById('send').value == '' && (document.getElementById('pwd').value == '')){
+        if ((document.getElementById('send').value == '') && (document.getElementById('pwd').value == '')){
                alert('둘다 입력하세요')
            } else if (document.getElementById('email').value == ''){
                alert('아이디 입력하세요')
            } else if (document.getElementById('pwd').value == ''){
                alert('비번 입력하세요')
-            }
-       });
+           }
+             if (document.getElementById('pwd').value.length < 6){
+                alert('더 길게 입력하셈')
+           }
+      });
 
       </script>
 
