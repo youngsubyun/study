@@ -36,8 +36,29 @@
       </div>
 
       <script>
+        // if/else 연습문제
+      function 삼육구게임(num){
+        if (num % 3 == 0 && num % 9 != 0){
+          console.log('박수')
+        }
+        else if (num % 9 == 0){
+          console.log('박수x2')
+        }
+        else if (num % 3 != 0){
+          console.log('통과')
+        }
+      }
+
+      function 합격했냐(num1, num2){
+        if (num1 + num2 >= 120 && num1 > 40 && num2 > 40){
+          console.log('합격')
+        }
+        else {
+          console.log('불합격')
+        }
+      }
         
-       $('form').on('submit', function(){
+      $('form').on('submit', function(){
         if ((document.getElementById('send').value == '') && (document.getElementById('pwd').value == '')){
                alert('둘다 입력하세요')
            } else if (document.getElementById('email').value == ''){
@@ -56,11 +77,35 @@
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
           <span class="navbar-brand">Navbar</span>
+          <span class="badge bg-dark" id="ch">Dark 🔄</span>
           <button class="navbar-toggler" type="button">
             <span class="navbar-toggler-icon"></span>
           </button>
         </div>
       </nav> 
+
+      <script>
+/*
+        var name = 'Kim';
+
+        let name = 'kim'; // let은 재선언 불가능
+
+        const name = 'kim'; // const은 재선언,재할당 불가능 / 변하면 안되는 값들 (상수) 보관할 때 용이
+        
+        var count = 0;
+*/
+        $('.badge').on('click', function(){
+          count += 1;
+          if (count % 2 == 1){
+            document.getElementById('ch').innerHTML = "light 🔄";
+          }
+          else {
+            document.getElementById('ch').innerHTML = "Dark 🔄";
+          }
+          //나머지연산자로 2를 나누었을때 나머지가 1인것 == 홀수  2로 나누었을때 나누어 떨어지는것 == 짝수
+          })
+
+      </script>
 
       <ul class="list-group">
         <li class="list-group-item">An item</li>

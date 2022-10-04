@@ -1,0 +1,53 @@
+
+body {
+    margin: 0;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.container {
+    background: linear-gradient(rgb(126, 126, 225) 50%, rgb(75, 75, 188));
+    display: flex;
+}
+
+.title-txt {
+    color: white;
+    margin-right: 200px;
+    padding: 70px;
+}
+
+.btn-title {
+    background-color: rgb(86, 84, 84);
+    color: white;
+    height: 40px;
+    width: 130px;
+    border-radius: 5px;
+}
+
+.middle-txt {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.btn-center {
+    background-color: rgb(86, 84, 84);
+    color: white;
+    height: 40px;
+    width: 130px;
+    border-radius: 5px;
+}
+
+.End-txt {
+    text-align: center;
+    background-color: rgb(75, 75, 188);
+    color: white;
+    height: 300px;
+}
+
+.End-title {
+    margin: 50px;
+    padding: 40px;
+    line-height: 30%;
+}

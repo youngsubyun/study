@@ -1,4 +1,9 @@
 
+.dark {
+  background: black;
+  color: white;
+}
+
 .list-group {
     display: none;
 }
