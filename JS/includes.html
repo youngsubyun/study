@@ -37,13 +37,22 @@
 
       <script>
 
-            $('form').on('submit', function(){
+            $('form').on('submit', function(e){
                 var inputvalue = document.getElementById('email').value;
                 if (document.getElementById('email').value == ''){
                     alert('아이디 입력하세요');
                 }
                 if (/\S+@\S+\.\S+/.test(inputvalue) == false){
                     alert('이메일형식아님');
+                    e.preventDefault();
+                }
+                var inputvalue2 = document.getElementById('pwd').value;
+                if (document.getElementById('pwd').value == ''){
+                    alert('비번 입력하세요')
+                }
+                if (/[A-Z]/.test(inputvalue2) == false){
+                  alert('대문자포함하셈')
+                  e.preventDefault();
                 }
             });
 
