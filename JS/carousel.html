@@ -35,14 +35,37 @@
         </div>
     </div>
 
+    <button class="previous">이전</button>
     <button class="slide-1">1</button>
     <button class="slide-2">2</button>
     <button class="slide-3">3</button>
+    <button class="next">다음</button>
 
     <script>
 
+        var picture = 1;
+        var pic = 2;
+
+        $('.next').on('click', function(){
+            if (picture == 1){
+                $('.slide-container').css('transform', 'translateX(-100vw)');
+                picture = picture + 1;
+            } else if (picture == 2){
+                $('.slide-container').css('transform', 'translateX(-200vw)');
+            }
+        })
+
+        $('.previous').on('click', function(){
+            if (pic == 2){
+                $('.slide-container').css('transform', 'translateX(-100vw)');
+                pic = pic - 1;
+            } else if (pic == 1){
+                $('.slide-container').css('transform', 'translateX(0vw)');
+            }
+        })
+
         $('.slide-1').on('click', function(){
-            $('.slide-container').css('transform', 'translateX(-0vw)');
+            $('.slide-container').css('transform', 'translateX(0vw)');
         })
         $('.slide-2').on('click', function(){
             $('.slide-container').css('transform', 'translateX(-100vw)');
