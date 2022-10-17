@@ -57,11 +57,24 @@
       </ul>
 
       <script>
-          document.getElementsByClassName('navbar-toggler')[0].addEventListener('click', function(){
-              document.getElementById('as').style.display = 'block';
-          });
-      </script>
+        function 삼육구게임(num){
+          if (num % 9 == 0){
+            console.log('박수X2');
+          }else if (num % 3 == 0){
+            console.log('박수');
+          } else {
+            console.log('통과');
+          }
+        }
 
+        function 점수(num1, num2){
+          if (num1 < 40 || num2 < 40){
+            console.log('과락');
+          }else if (num1 + num2 >= 120){
+            console.log('합격');
+          }
+        }
+      </script>
       <div class="main-bg">
           <h4>Shirts on Sale</h4>
           <button id="login" class="btn btn-danger">로그인</button>
