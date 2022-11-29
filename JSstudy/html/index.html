@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/JSstudy/css/style.css">
+    <title>버튼 조작</title>
+</head>
+<body>
+    <div class="alert-box" id="alert">
+        <p id="title">알림창임</p>
+        <button onclick="closeAlert()">닫기</button>
+    </div>
+    <button onclick="openUser()">아이디</button>
+    <button onclick="openPwd()">비밀번호</button>
+    <script>
+        function closeAlert(){
+            document.getElementById('alert').style.display = 'none';
+        }
+
+        function openUser(){
+            document.getElementById('title').innerHTML = "아이디를 입력하세요";
+            document.getElementById('alert').style.display = 'block';
+        }
+        function openPwd(){
+            document.getElementById('title').innerHTML = "비밀번호를 입력하세요";
+            document.getElementById('alert').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
