@@ -9,12 +9,19 @@
 </head>
 <body>
     <div class="alert-box" id="alert">
-        <p id="title">알림창임</p>
-        <button onclick="closeAlert()">닫기</button>
+        <p class="title1" id="title">알림창임</p>
+        <button id="close">닫기</button>
     </div>
     <button onclick="openUser()">아이디</button>
     <button onclick="openPwd()">비밀번호</button>
     <script>
+
+        document.getElementById('close').addEventListener("click", function(){
+            document.getElementById('alert').style.display = 'none';
+        });
+        // event란? 클릭, 키입력, 스크롤, 드래그 등 유저들이 내 웹페이지에 조작을 가하는 것들 (감시자 역할)
+        //function(){} -> 콜백함수: 파라미터자리에 들어가는 함수, 순차적으로 실행하고 싶을 때 요구함
+
         function closeAlert(){
             document.getElementById('alert').style.display = 'none';
         }
