@@ -20,31 +20,142 @@
             <input type="text" class="form-control" id="email">
            </div>
            <div class="my-3">
-             <input type="password" class="form-control">
+             <input type="password" class="form-control" id="pwd">
            </div>
            <button type="submit" class="btn btn-primary" id="trans">전송</button>
            <button type="button" class="btn btn-danger" id="close">닫기</button>
         </form>
       </div>
     </div>
-
+    
     <script>
       //document.getElementById('email').value == '' -> 유저가 <input>에 입력한 값임)
-      $('form').on('submit', function(){
+      $('form').on('submit', function(e){
         if (document.getElementById('email').value == ''){
           alert('아이디를 입력하세요');
+          e.preventDefault(); //폼전송 막는것
+        }
+        if (document.getElementById('pwd').value == ''){
+          alert('비밀번호를 입력하세요');
+          e.preventDefault();
+        }
+        if (document.getElementById('pwd').value.length < 6){
+          alert('비밀번호를 더 길게 입력하세요');
+          e.preventDefault();
         }
       });
+
+      //if/ else, function 실력향상 과제
+      //1. 삼육구 게임
+      function 삼육구게임(num){
+        if (num % 9 == 0){
+          console.log('박수x2');
+        }else if (num % 3 == 0){
+          console.log('박수');
+        } else {
+          console.log('통과');
+        }
+      }
+
+      //2. 공인중개사 합격 여부 알림
+      function 합격(num2, num3){
+        if (num2 + num3 >= 120 && num2 >= 40 && num3 >= 40){
+          console.log('합격');
+        } else {
+          console.log('불합격');
+        }
+      }
     </script>
 
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-          <span class="navbar-brand">Navbar</span>
+          <span class="navbar-brand">JSShop</span>
+          <span class="badge bg-dark">Dark 🔄</span>
           <button class="navbar-toggler" type="button">
             <span class="navbar-toggler-icon"></span>
           </button>
         </div>
       </nav>
+
+      <p>태조 이성계가 태어난 년도는?</p>
+      <input type="text" id="answer">
+      <button id="send-answer">제출</button>
+
+      <script>
+
+        var count = 0;
+
+        $('#send-answer').on('click', function(){
+          count = count + 1;
+          var 정답 = document.getElementById('answer').value;
+          if (정답 == 1335) {
+            alert('성공');
+          } else if (count >= 3 && 정답 != 1335){
+            alert('실패');
+          }
+        });
+
+      </script>
+
+      <script>
+        //Dark 버튼을 누르면 Light로 바뀜
+        //badge 클릭횟수가 홀수면 클릭시 내부 글자를 Light로 변경
+        //badge 클릭횟수가 짝수면 내부 글자를 Dark로 변경
+        //변수 - 잠깐 자료를 저장하는 것 , 변수를 쓰는 이유: 길고 복잡한 자료들 저장가능/ 특정 값을 기억하게 하고 싶을때
+        var count = 0;
+
+        $('.badge').on('click', function(){
+          count = count + 1;
+
+          if (count % 2 == 1){
+            document.getElementsByClassName('badge')[0].innerHTML = 'Light 🔄';
+          } else {
+            document.getElementsByClassName('badge')[0].innerHTML = 'Dark 🔄';
+          }
+        });
+
+        //var, let, const 차이
+        //var   재선언 O  재할당 O  범위 function
+        //let   재선언 X  재할당 O  범위 {}
+        //const 재선언 X  재할당 X  범위 {}
+
+        //나이, 출신지역
+        //나이 재할당가능, 출신지역 재할당 불가능
+        let age = 28;
+        const Area = '인천';
+
+        var name = 'park';
+        var id = 0;
+
+        function showName(){
+          var name = 'kim';
+          var id = 1;
+          console.log(name);
+        }
+
+        showName();
+        console.log(id);
+
+        //은행 예금 계산기
+        var 예금액 = 60000;
+        var 미래예금액 = 0;
+
+          if (예금액 < 50000) {
+            미래예금액 = 예금액 * 1.15 *1.15;
+          } else {
+            미래예금액 = 예금액 * 1.20 *1.20;
+          }
+
+        console.log(미래예금액);
+
+        //마신 커리 리필양 계산기
+        var first = 360;
+        total = 0;
+
+        total = 360 + 360 * 2/3 + 360 * 2/3 * 2/3;
+
+        console.log(total);
+      </script>
 
       <ul class="list-group">
         <li class="list-group-item">An item</li>
