@@ -56,26 +56,6 @@
         }
       });
 
-      //if/ else, function 실력향상 과제
-      //1. 삼육구 게임
-      function 삼육구게임(num){
-        if (num % 9 == 0){
-          console.log('박수x2');
-        }else if (num % 3 == 0){
-          console.log('박수');
-        } else {
-          console.log('통과');
-        }
-      }
-
-      //2. 공인중개사 합격 여부 알림
-      function 합격(num2, num3){
-        if (num2 + num3 >= 120 && num2 >= 40 && num3 >= 40){
-          console.log('합격');
-        } else {
-          console.log('불합격');
-        }
-      }
     </script>
 
     <nav class="navbar navbar-light bg-light">
@@ -87,26 +67,6 @@
           </button>
         </div>
       </nav>
-
-      <!-- <p>태조 이성계가 태어난 년도는?</p>
-      <input type="text" id="answer">
-      <button id="send-answer">제출</button> -->
-
-      <script>
-
-        var count = 0;
-
-        $('#send-answer').on('click', function(){
-          count = count + 1;
-          var 정답 = document.getElementById('answer').value;
-          if (정답 == 1335) {
-            alert('성공');
-          } else if (count >= 3 && 정답 != 1335){
-            alert('실패');
-          }
-        });
-
-      </script>
 
       <script>
         //Dark 버튼을 누르면 Light로 바뀜
@@ -125,47 +85,18 @@
           }
         });
 
-        //var, let, const 차이
-        //var   재선언 O  재할당 O  범위 function
-        //let   재선언 X  재할당 O  범위 {}
-        //const 재선언 X  재할당 X  범위 {}
-
-        //나이, 출신지역
-        //나이 재할당가능, 출신지역 재할당 불가능
-        let age = 28;
-        const Area = '인천';
-
-        var name = 'park';
-        var id = 0;
-
-        function showName(){
-          var name = 'kim';
-          var id = 1;
-          console.log(name);
-        }
-
-        showName();
-        console.log(id);
-
-        //은행 예금 계산기
-        var 예금액 = 60000;
-        var 미래예금액 = 0;
-
-          if (예금액 < 50000) {
-            미래예금액 = 예금액 * 1.15 *1.15;
+        //scroll 이벤트리스너
+        // window.addEventListener('scroll', function(){
+        //   window.scrollY(0, 100);
+        // });
+        $(window).on('scroll', function(){
+          if ($(window).scrollTop() >= 100){
+            $('.navbar-brand').css('font-size', '20px');
           } else {
-            미래예금액 = 예금액 * 1.20 *1.20;
+            $('.navbar-brand').css('font-size', '30px');
           }
+        });
 
-        console.log(미래예금액);
-
-        //마신 커리 리필양 계산기
-        var first = 360;
-        total = 0;
-
-        total = 360 + 360 * 2/3 + 360 * 2/3 * 2/3;
-
-        console.log(total);
       </script>
 
       <ul class="list-group">
@@ -180,6 +111,28 @@
         <h4>Shirts on Sale</h4>
         <button id="login" class="btn btn-danger">로그인</button>
       </div>
+
+      <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll;">
+        In publishing and graphic design, Lorem ipsum (a pseudo-Latinism, 
+        a clipping of dolōrem ipsum, meaning "pain itself") is a placeholder 
+        text commonly used to demonstrate the visual form of a document or a typeface 
+        without relying on meaningful content. Lorem ipsum may be used as
+      </div>
+
+      <script>
+        //div의 스크롤바 내린 양 + 눈에 보이는 div 높이 == div의 실제높이
+        $('.lorem').on('scroll', function(){
+          var 스크롤양 = document.querySelector('.lorem').scrollTop;
+          var 실제높이 = document.querySelector('.lorem').scrollHeight;
+          var 높이 = document.querySelector('.lorem').clientHeight;
+
+          if (스크롤양 + 높이 > 실제높이 - 10){
+            alert('ok');
+          }
+        });
+      </script>
+
+      <div style="height: 1000px;"></div>
 
       <div style="overflow: hidden;">
         <div class="slide-container">
@@ -255,6 +208,89 @@
         //   function(){
         //       document.getElementsByClassName('list-group')[0].classList.toggle('show');
         //   })
+      </script>
+
+      <script>
+      //if/ else, function 실력향상 과제
+      //1. 삼육구 게임
+      function 삼육구게임(num){
+        if (num % 9 == 0){
+          console.log('박수x2');
+        }else if (num % 3 == 0){
+          console.log('박수');
+        } else {
+          console.log('통과');
+        }
+      }
+
+      //2. 공인중개사 합격 여부 알림
+      function 합격(num2, num3){
+        if (num2 + num3 >= 120 && num2 >= 40 && num3 >= 40){
+          console.log('합격');
+        } else {
+          console.log('불합격');
+        }
+      }
+
+      //var, let, const 차이
+        //var   재선언 O  재할당 O  범위 function
+        //let   재선언 X  재할당 O  범위 {}
+        //const 재선언 X  재할당 X  범위 {}
+
+        //나이, 출신지역
+        //나이 재할당가능, 출신지역 재할당 불가능
+        let age = 28;
+        const Area = '인천';
+
+        var name = 'park';
+        var id = 0;
+
+        function showName(){
+          var name = 'kim';
+          var id = 1;
+          console.log(name);
+        }
+
+        showName();
+        console.log(id);
+
+        //은행 예금 계산기
+        var 예금액 = 60000;
+        var 미래예금액 = 0;
+
+          if (예금액 < 50000) {
+            미래예금액 = 예금액 * 1.15 *1.15;
+          } else {
+            미래예금액 = 예금액 * 1.20 *1.20;
+          }
+
+        console.log(미래예금액);
+
+        //마신 커리 리필양 계산기
+        var first = 360;
+        total = 0;
+
+        total = 360 + 360 * 2/3 + 360 * 2/3 * 2/3;
+
+        console.log(total);
+
+        // 분과 초를 차례로 입력하면 ms단위로 바뀌는 함수
+        function ms(a, b){
+          var result = (a * 60 + b) * 1000;
+          return result;
+        }
+        console.log(ms(1, 30));
+
+        // 가격을 파라미터로 입력하면 10% 할인가 적용 함수
+        function 함수(a, b){
+          var result = a * 0.9;
+          if (b == true){
+            result = result - 1.5;
+          }
+          return result;
+        }
+        console.log(함수(70, false));
+        console.log(함수(10, true));
       </script>
 
     <!-- 대부분 자바스크립트 라이브러리는 <body> 끝나기 전에 넣는 것을 권장 -->
