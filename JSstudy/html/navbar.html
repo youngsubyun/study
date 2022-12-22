@@ -27,6 +27,19 @@
         </form>
       </div>
     </div>
+
+    <script>
+      $('.black-bg').on('click', function(e){
+        // 이벤트 관련 함수들
+        // e.target; // 유저가 실제로 누른거
+        // e.currentTarget; // 이벤트리스너 달린 곳 == this (여기에 썼을때)
+        // e.preventDefault(); // 이벤트 기본동작 막아줌
+        // e.stopPropagation(); // 내 상위요소로 이벤트 버블링 막아줌
+        if (e.target == document.querySelector('.black-bg')){
+          $('.black-bg').removeClass('show-modal');
+        }
+      });
+    </script>
     
     <script>
       //document.getElementById('email').value == '' -> 유저가 <input>에 입력한 값임)

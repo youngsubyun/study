@@ -20,7 +20,7 @@
     height : 100%;
     position : fixed;
     background : rgba(0,0,0,0.5);
-    z-index : 5;
+    z-index : 6;
     padding: 30px;
     visibility: hidden; /* visibility: hidden;(모습만 숨김) 애니메이션줄 때 display: none(HTML에서 아예 없앰) 대용 */
     opacity: 0;
@@ -65,4 +65,8 @@
 
   .slide-box img {
     width: 100%;
+  }
+
+  .bg-close {
+    display: none;
   }
