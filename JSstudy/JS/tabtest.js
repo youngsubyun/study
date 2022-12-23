@@ -46,18 +46,91 @@ function 탭열기(num){
     $('.tab-content').eq(num).addClass('show');
 }
 
+var pants = [28, 30, 32, 34];
+var shirts = [95, 100, 105];
+
 $('.form-select').eq(0).on('input', function(){
     var value = $('.form-select').eq(0).val();
     if (value == '셔츠'){
         $('.form-select').eq(1).removeClass('form-hide');
-        var 탬플릿 = '<option>95</option> <option>100</option>' ;
-        $('.form-select').eq(1).html(탬플릿);
+        $('.form-select').eq(1).html('');
+        shirts.forEach(function(data){
+            console.log(data);
+            $('.form-select').eq(1).append('<option>' + data + '</option>');
+        });
     }else if (value == '바지'){
         $('.form-select').eq(1).removeClass('form-hide');
-        var 탬플릿 = '<option>28</option> <option>30</option>' ;
-        $('.form-select').eq(1).html(탬플릿);
+        $('.form-select').eq(1).html('');
+        pants.forEach(function(a){
+            $('.form-select').eq(1).append('<option>' + a + '</option>')
+        });
     } 
     else if (value == '모자') {
         $('.form-select').eq(1).addClass('form-hide');
     }
 });
+
+var obj = {name : 'kim', age : 20}
+
+for (var key in obj){
+    console.log(obj[key]);
+}
+
+//array 실력향상 과제
+// var 출석부 = ['흥민', '영희', '철수', '재석'];
+
+// function 이름찾기(a){
+//     for (var i = 0; i <= 출석부.length; i++){
+//         if (a == 출석부[i]){
+//             console.log('있어요');
+//         }
+//     }
+// }
+
+//구구단
+// for (var k = 2; k < 10; k++){
+//     for (var i = 1; i < 10; i++){
+//         console.log(k * i);
+//     }
+// }
+
+//평균점수 계산기
+// var arr = [10, 20, 30, 40 ,50];
+// var result = 0;
+
+// for (var i = 0; i < 5; i++){
+//     result = result + arr[i];
+// }
+
+// function 함수(arr, b){
+//     if (result / arr.length < b){
+//         console.log('오름');
+//     } else {
+//         console.log('내림');
+//     }
+// }
+
+//ajax로 GET(서버 데이터 가져올 때) 요청하는 법 
+// $.get('https://codingapple1.github.io/hello.txt')
+// .done(function(data){
+//     console.log(data);
+// }).fail(function(){
+//     console.log('t');
+// }) //ajax 실패시 코드 실행
+
+// $.get('https://codingapple1.github.io/price.json')
+// .done(function(data){
+//     console.log(data.price);
+// })
+
+//fetch 브라우저 기본 함수를 사용해서 ajax 가능
+//JSON : object, array 보내고 싶으면 문자처럼 만들어야 함
+//ex) "{"price" : 50000}"
+// fetch('https://codingapple1.github.io/price.json')
+// .then(res => res.json()) //받아온 JSON을 object로 바꿔주는 기능
+// .then(data => {
+//     console.log(data)
+// })
+// .catch(error => {
+//     console.log(error)
+// })
